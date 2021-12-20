@@ -18,7 +18,6 @@ fun likes(likesAmount: Int): String {
 
     var statement = ""
 
-
     if ((likesAmount % 10) > 1 || (likesAmount % 100) != 1 ) {
 
         statement = "людям"
