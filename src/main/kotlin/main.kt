@@ -19,16 +19,17 @@ fun likes(likesAmount: Int): String {
     var statement = ""
 
 
-    if ((likesAmount % 10) == 1){
-
-        statement = "Человеку"
-
-        }
-    else if ((likesAmount % 10) != 1 || (likesAmount % 100) != 1 ){
+    if ((likesAmount % 10) > 1 || (likesAmount % 100) != 1 ) {
 
         statement = "людям"
-
     }
+
+    else if ((likesAmount % 10) == 1){
+
+            statement = "Человеку"
+
+        }
+
     else if ((likesAmount % 1000) == 0) {
 
         statement = "людей"
@@ -73,7 +74,7 @@ fun main(args: Array<String>){
 
     println(commission)
 
-    val likesAmount = 1520
+    val likesAmount = 11101
     val ppl = likes(likesAmount)
 
     println("$likesAmount $ppl")
