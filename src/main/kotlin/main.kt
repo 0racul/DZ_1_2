@@ -14,31 +14,12 @@ fun transfers(amountInRubles: Float): Int {
 
 }
 
-fun likes(likesAmount: Int): String {
-
-    var statement = ""
-
-    if ((likesAmount % 10) > 1 || (likesAmount % 100) != 1 ) {
-
-        statement = "людям"
+fun likes(likesAmount: Int) = when {
+        (likesAmount % 10) > 1 || (likesAmount % 100) != 1 -> "людям"
+        (likesAmount % 10) == 1 -> "Человеку"
+        (likesAmount % 1000) == 0 -> "людей"
+    else -> "людям"
     }
-
-    else if ((likesAmount % 10) == 1){
-
-            statement = "Человеку"
-
-        }
-
-    else if ((likesAmount % 1000) == 0) {
-
-        statement = "людей"
-    }
-
-    return statement
-
-
-
-}
 
 fun musicCharges(initialSum: Int, regularCustomer: Boolean): Float{
 
